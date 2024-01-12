@@ -1,0 +1,23 @@
+java mendukung membuat program dengan membagi-baginya
+dimaven kita bisa melakukannya, ada beberapa yang perlu diketahui
+
+1. buat folder untuk fitur
+2. masukan pom kedalam fitur
+ - didalam pom masukan parentnya, yaitu pom yang diatas foldernya
+ - masukan artifactId
+3. pom parent
+ - ubah packaginnya dari jar -> pom
+ - tambahkan module yang includi didalamnya
+ - dependency yang diparent akan diturunkan ke dalam childnya
+
+ 4. module child <-> module child
+  - saling terisolasi, maka harus memasukan ke pomnya. 
+    Di yang membutuhkan data dari pom lainnya
+   <dependencies>
+        <dependency>
+            <groupId>multi-module-project</groupId>
+            <artifactId>belajar-apache-maven-data</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
